@@ -7,7 +7,7 @@
 }
 
 :root {
-   --background: #202124;
+   --background: blue;
    --cell-size: 100px;
    --mark-size: calc(var(--cell-size) * 0.9);
 }
@@ -70,7 +70,7 @@ main.end {
 .board.x .cell:not(.x):not(.o):hover::before,
 .board.x .cell:not(.x):not(.o):hover::after,
 .board.o .cell:not(.x):not(.o):hover::before {
-   background-color: #3d3d3d;
+   background-color: #6656f5;
 }
 
 .board.x .cell:not(.x):not(.o):hover::before,
