@@ -9,6 +9,7 @@
 :root {
    --background: blue;
    --cell-size: 100px;
+   --mark-size: calc(var(--cell-size) * 0.9);
 }
 
 body {
@@ -34,9 +35,15 @@ header {
    width: var(--cell-size);
    height: var(--cell-size);
 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
    border: 1px white solid;
    border-top: none;
    border-right: none;
+
+   position: relative;
 }
 
 .cell:nth-child(3n + 1) {
@@ -45,4 +52,43 @@ header {
 
 .cell:nth-child(n + 7) {
    border-bottom: none;
+}
+
+.cell.x::before,
+.cell.x::after {
+   content: '';
+   width: calc(var(--mark-size) * 0.15);
+   height: var(--mark-size);
+
+   background-color: antiquewhite;
+   position: absolute;
+}
+
+.cell.x::before {
+   transform: rotate(45deg);
+}
+
+.cell.x::after {
+   transform: rotate(-45deg);
+}
+
+.cell.o::before,
+.cell.o::after {
+   content: '';
+   width: var(--mark-size);
+   height: var(--mark-size);
+
+   border-radius: 50%;
+
+   background-color: antiquewhite;
+   position: absolute;
+}
+
+.cell.o::before {
+   width: calc(var(--mark-size) * 0, 9);
+   height: calc(var(--mark-size) * 0, 9);
+}
+
+.cell.o::after {
+   transform: rotate(-45deg);
 }
