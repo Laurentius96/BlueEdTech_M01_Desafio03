@@ -60,7 +60,7 @@ header {
    width: calc(var(--mark-size) * 0.15);
    height: var(--mark-size);
 
-   background-color: antiquewhite;
+   background-color: white;
    position: absolute;
 }
 
@@ -75,20 +75,21 @@ header {
 .cell.o::before,
 .cell.o::after {
    content: '';
-   width: var(--mark-size);
-   height: var(--mark-size);
-
    border-radius: 50%;
 
-   background-color: antiquewhite;
    position: absolute;
 }
 
 .cell.o::before {
-   width: calc(var(--mark-size) * 0, 9);
-   height: calc(var(--mark-size) * 0, 9);
+   width: calc(var(--mark-size) * 0.9);
+   height: calc(var(--mark-size) * 0.9);
+
+   background-color: white;
 }
 
 .cell.o::after {
-   transform: rotate(-45deg);
+   width: calc(var(--mark-size) * 0.6);
+   height: calc(var(--mark-size) * 0.6);
+
+   background-color: var(--background);
 }
