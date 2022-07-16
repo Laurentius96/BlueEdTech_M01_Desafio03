@@ -7,7 +7,7 @@
 }
 
 :root {
-   --background: blue;
+   --background: #202124;
    --cell-size: 100px;
    --mark-size: calc(var(--cell-size) * 0.9);
 }
@@ -70,7 +70,7 @@ main.end {
 .board.x .cell:not(.x):not(.o):hover::before,
 .board.x .cell:not(.x):not(.o):hover::after,
 .board.o .cell:not(.x):not(.o):hover::before {
-   background-color: #6a50ff;
+   background-color: #3d3d3d;
 }
 
 .board.x .cell:not(.x):not(.o):hover::before,
@@ -80,8 +80,6 @@ main.end {
    content: '';
    width: calc(var(--mark-size) * 0.15);
    height: var(--mark-size);
-
-   background-color: white;
 
    position: absolute;
 }
@@ -101,6 +99,8 @@ main.end {
 .cell.o::before,
 .cell.o::after {
    content: '';
+   width: var(--mark-size);
+   height: var(--mark-size);
    border-radius: 50%;
 
    position: absolute;
