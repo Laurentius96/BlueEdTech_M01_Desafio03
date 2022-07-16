@@ -36,6 +36,7 @@ function startGame() {
    });
 
    restartButton.addEventListener('click', startGame);
+   gameEndElement.classList.remove('show');
    document.querySelector('main').classList.remove('end');
 }
 
@@ -78,7 +79,7 @@ function checkWin(turnClass) {
 }
 
 function checkDraw() {
-   return cells.every(cell => {
+   return [...cells].every(cell => {
       return cell.classList.contains(xClass) || cell.classList.contains(oClass);
    });
 }
