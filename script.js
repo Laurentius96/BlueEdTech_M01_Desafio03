@@ -1,13 +1,11 @@
 const xClass = 'x';
 const oClass = 'o';
-
 let xTurn;
 
 const cells = document.querySelectorAll('.cell');
 const board = document.querySelector('#board');
 
 const gameEndMessage = document.querySelector('[data-game-end-message]');
-
 const gameEndElement = document.querySelector('#gameEndElement');
 
 const restartButton = document.querySelector('#restartButton');
@@ -23,6 +21,8 @@ const lines = [
    [2, 4, 6],
 ];
 
+startGame();
+
 function startGame() {
    xTurn = true;
    board.classList.add('x');
@@ -36,6 +36,7 @@ function startGame() {
    });
 
    restartButton.addEventListener('click', startGame);
+
    gameEndElement.classList.remove('show');
    document.querySelector('main').classList.remove('end');
 }
@@ -57,7 +58,7 @@ function handleClick(e) {
 }
 
 function placeMark(cell, turnClass) {
-   cell.class.add(turnClass);
+   cell.classList.add(turnClass);
 }
 
 function swapTurn() {
@@ -86,13 +87,11 @@ function checkDraw() {
 
 function endGame(draw) {
    if (draw) {
-      gameEndMessage.innerText = 'Empate!!';
+      gameEndMessage.innerText = 'Empate!';
    } else {
-      gameEndMessage.innerText = `${xTurn ? 'X' : 'O'} venceu!`;
+      gameEndMessage.innerText = `${xTurn ? "X" : "O"} venceu!`;
    }
 
    gameEndElement.classList.add('show');
    document.querySelector('main').classList.add('end');
 }
-
-startGame();
