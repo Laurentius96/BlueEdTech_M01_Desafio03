@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   --background: #202124;
+   --cell-size: 100px;
+}
+
+body {
+   background: var(--background);
+}
+
+header {
+   text-align: center;
+   color: white;
+   font: 400 12pt 'Roboto', sans-serif;
+   margin: 64px 0 64px 0;
+}
+
+.board {
+   display: grid;
+}
+
+.cell {
+   border: 1px white solid;
+   width: var(--cell-size);
+   height: var(--cell-size);
+}
