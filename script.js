@@ -12,6 +12,8 @@ const gameEndElement = document.querySelector('#gameEndElement');
 
 const restartButton = document.querySelector('#restarButton');
 
+startGame();
+
 function startGame() {
    xTurn = true;
    board.classList.add('x');
@@ -28,4 +30,25 @@ function startGame() {
    document.querySelector('main').classList.remove('end');
 }
 
-startGame();
+function handleClick(e) {
+   let cell = e.target;
+   let turnClass = xTurn ? xClass : oClass;
+
+   placeMark(cell, turnClass);
+   swapTurn();
+   setBoardHover();
+}
+
+function placeMark(cell, turnClass) {
+   cell.class.add(turnClass);
+}
+
+function swapTurn() {
+   xTurn = !xTurn;
+}
+
+function setBoardHover() {
+   xTurn
+      ? board.classList.replace('o', 'x')
+      : board.classList.replace('x', 'o');
+}
